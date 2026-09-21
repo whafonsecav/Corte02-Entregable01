@@ -32,7 +32,7 @@
       '<div class="cover">' +
         '<div>' +
           '<div class="cover__badge anim d1">Corte 02 &nbsp;·&nbsp; <b>Entregable 01</b></div>' +
-          '<h1 class="anim d2">Lo compré<br><span class="g">y nunca lo usé</span></h1>' +
+          '<h1 class="anim d2 shine">Lo compré<br>y nunca lo usé</h1>' +
           '<p class="cover__lead anim d3">Diez cosas que están en mi casa, nuevas, esperando un momento que no llegó. ' +
           'Cada una tiene <b>qué es</b>, <b>para qué la compré</b> y <b>por qué nunca la usé</b>.</p>' +
           '<div class="cover__chips anim d4">' +
@@ -42,12 +42,16 @@
           '</div>' +
         '</div>' +
         '<div class="idcard anim d5">' +
+          '<div class="idcard__logo"><img src="assets/img/logo.webp" alt="Politécnico Grancolombiano"></div>' +
           '<div class="idrow"><span>Asignatura</span><strong>Comportamiento del Consumidor</strong><em>Corte 02 · Entregable 01</em></div>' +
           '<div class="idrow"><span>Docente</span><strong>Carlos Alberto Espitia Benito</strong></div>' +
           '<div class="idrow"><span>Presenta</span><strong>William Harvey Fonseca Valero</strong></div>' +
-          '<div class="idrow"><span>Programa</span><strong>Mercadeo y Publicidad</strong><em>Tercer semestre</em></div>' +
-          '<div class="idrow"><span>Modalidad</span><strong>Bogotá noche · solo martes</strong><em>Martes de 6:40 p.m. a 9:49 p.m.</em></div>' +
-          '<div class="idrow"><span>Institución</span><strong>Politécnico Grancolombiano</strong></div>' +
+          '<div class="idgrid">' +
+            '<div class="idrow"><span>Programa</span><strong>Mercadeo y Publicidad</strong><em>Tercer semestre</em></div>' +
+            '<div class="idrow"><span>Modalidad</span><strong>Presencial nocturna</strong></div>' +
+            '<div class="idrow"><span>Horario</span><strong>Martes</strong><em>6:40 p.m. – 9:49 p.m.</em></div>' +
+            '<div class="idrow"><span>Lugar</span><strong>Bogotá</strong><em>Sede City Campus</em></div>' +
+          '</div>' +
         '</div>' +
       '</div>' +
     '</section>'
@@ -56,10 +60,6 @@
   // 2..11) Productos
   PRODUCTOS.forEach(function (p) {
     var nn = ('0' + p.n).slice(-2);
-    var datos = p.datos.map(function (d) {
-      return '<div class="dato"><b>' + d[0] + '</b><span>' + d[1] + '</span></div>';
-    }).join('');
-
     slides.push(
       '<section class="slide">' +
         '<div class="item">' +
@@ -67,11 +67,10 @@
             '<div class="photo__glow"></div>' +
             '<div class="photo__num">' + nn + '</div>' +
             '<div class="photo__frame">' + pic(p.img, p.titulo) + '</div>' +
-            '<div class="photo__stamp">Sin usar</div>' +
           '</div>' +
           '<div class="info">' +
             '<div class="info__kicker anim d2"><span class="k">Producto ' + nn + ' / 10</span><span class="tag">' + p.tag + '</span></div>' +
-            '<h2 class="anim d2">' + p.titulo + '</h2>' +
+            '<h2 class="anim d2 shine">' + p.titulo + '</h2>' +
             '<p class="info__sub anim d3">' + p.sub + '</p>' +
             '<div class="blocks">' +
               '<div class="blk anim d4" style="--bc:var(--c1)"><div class="blk__ico">' + svg(ICO.box) + '</div>' +
@@ -81,7 +80,6 @@
               '<div class="blk anim d6" style="--bc:var(--c3)"><div class="blk__ico">' + svg(ICO.off) + '</div>' +
                 '<div><div class="blk__t">¿Por qué nunca lo usé?</div><p class="blk__p">' + p.porque + '</p></div></div>' +
             '</div>' +
-            '<div class="datos anim d7">' + datos + '</div>' +
           '</div>' +
         '</div>' +
       '</section>'
@@ -92,18 +90,17 @@
   slides.push(
     '<section class="slide">' +
       '<div class="end">' +
-        '<h2 class="anim d1">Gracias</h2>' +
+        '<h2 class="anim d1 shine">Gracias</h2>' +
         '<p class="anim d2">Diez compras, diez razones distintas y un mismo final: el producto llegó, ' +
         'pero el momento de usarlo nunca llegó con él.</p>' +
-        '<div class="end__stats anim d3">' +
-          '<div class="dato"><b>10</b><span>productos comprados</span></div>' +
-          '<div class="dato"><b>6</b><span>siguen sellados</span></div>' +
-          '<div class="dato"><b>0</b><span>llegaron a usarse</span></div>' +
-        '</div>' +
-        '<div class="end__sig anim d4">' +
-          '<b>William Harvey Fonseca Valero</b> · Mercadeo y Publicidad · Tercer semestre<br>' +
-          'Comportamiento del Consumidor · Docente: Carlos Alberto Espitia Benito<br>' +
-          'Politécnico Grancolombiano · Bogotá noche · martes 6:40 p.m. – 9:49 p.m.' +
+        '<div class="credits anim d3">' +
+          '<div class="credits__logo"><img src="assets/img/logo.webp" alt="Politécnico Grancolombiano"></div>' +
+          '<div class="credits__grid">' +
+            '<div><span>Presenta</span><strong>William Harvey Fonseca Valero</strong></div>' +
+            '<div><span>Programa</span><strong>Mercadeo y Publicidad</strong><em>Tercer semestre</em></div>' +
+            '<div><span>Asignatura</span><strong>Comportamiento del Consumidor</strong><em>Corte 02 · Entregable 01</em></div>' +
+            '<div><span>Docente</span><strong>Carlos Alberto Espitia Benito</strong></div>' +
+          '</div>' +
         '</div>' +
       '</div>' +
     '</section>'
