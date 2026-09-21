@@ -77,8 +77,23 @@ body::before{
    ciclo el dibujo coincide consigo mismo, asi que no hay costura ni reinicio
    visible. El desplazamiento es positivo, de modo que los colores entran por la
    izquierda y salen por la derecha. */
+/* Luz de color que recorre los titulos.
+   Va SIEMPRE en un elemento hijo del titulo: la regla de entrada
+   `.slide.is-active .anim` define la propiedad `animation` y, por tener mas
+   especificidad, borraria este barrido si compartieran el mismo elemento.
+
+   Continuidad: el degradado es HORIZONTAL (90deg) y su primer y ultimo color
+   son el mismo, asi que el mosaico encaja consigo mismo al repetirse. Un
+   degradado inclinado no encaja -- arriba y abajo llegan al borde con colores
+   distintos -- y produce una costura visible: de ahi el salto.
+
+   El recorrido avanza y retrocede en multiplos exactos del mosaico (760px) y
+   termina 2 mosaicos adelante, o sea en la misma imagen con la que empezo: el
+   ciclo cierra sin corte. Con ease-in-out la velocidad tambien llega a cero en
+   los extremos, asi que no se percibe el reinicio. */
 .shine{
-  background-image:linear-gradient(100deg,
+  display:inline-block;
+  background-image:linear-gradient(90deg,
     #f3d38a   0%,
     #fff6e0  11%,
     #ffffff  24%,
@@ -88,14 +103,20 @@ body::before{
     #ffffff  76%,
     #fff6e0  89%,
     #f3d38a 100%);
-  background-size:135% 100%;
+  background-size:760px 100%;
   background-repeat:repeat-x;
   -webkit-background-clip:text;background-clip:text;
   color:transparent;
-  animation:sheen 5.5s linear infinite;
+  animation:sheen 19s ease-in-out infinite;
   will-change:background-position;
 }
-@keyframes sheen{from{background-position:0 0}to{background-position:135% 0}}
+@keyframes sheen{
+  0%   {background-position:0 0}
+  30%  {background-position:1520px 0}   /* +2 mosaicos */
+  50%  {background-position:760px 0}    /* -1 mosaico  */
+  76%  {background-position:2280px 0}   /* +2 mosaicos */
+  100% {background-position:1520px 0}   /* -1 mosaico  -> +2 en total */
+}
 .cover__lead{margin-top:22px;font-size:22px;line-height:1.5;color:var(--mut);max-width:46ch}
 .cover__lead b{color:#fff;font-weight:600}
 .cover__chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}

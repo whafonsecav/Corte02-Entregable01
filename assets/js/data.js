@@ -46,7 +46,7 @@ const PRODUCTOS = [
     sub: "3 obras en un solo tomo",
     que: "Un libro de tapa dura que reúne tres obras de Julio Verne: Cinco semanas en globo, Viaje al centro de la Tierra y El maestro Zacarías. Todavía tiene el plástico de fábrica.",
     para: "Me prestaron Viaje al centro de la Tierra, lo leí y me gustó. Tuve que devolverlo. Me gusta coleccionar los libros que ya leí, y esta edición traía ese más dos obras nuevas.",
-    porque: "Solo leo en el transporte público, camino a la universidad o a la oficina. Este libro es grande y pesado: no me veo abriéndolo en un bus. Y llego muy cansado a la casa como para leer. Mientras tanto leí otros que sí puedo cargar: Lo que no tiene nombre, Satanás y Crónica de una muerte anunciada."
+    porque: "Solo leo en el transporte público, de ida y de vuelta, cuando voy a la universidad o cuando me toca ir a la oficina. Este libro es grande y pesado: no me veo abriéndolo en un bus. Y llego muy cansado a la casa como para leer. Mientras tanto leí otros que sí puedo cargar: Lo que no tiene nombre, Satanás y Crónica de una muerte anunciada."
   },
   {
     n: 7, img: "07", tag: "Cocina",

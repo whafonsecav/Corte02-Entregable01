@@ -32,7 +32,7 @@
       '<div class="cover">' +
         '<div>' +
           '<div class="cover__badge anim d1">Corte 02 &nbsp;·&nbsp; <b>Entregable 01</b></div>' +
-          '<h1 class="anim d2 shine">Lo compré<br>y nunca lo usé</h1>' +
+          '<h1 class="anim d2"><span class="shine">Lo compré<br>y nunca lo usé</span></h1>' +
           '<p class="cover__lead anim d3">Diez cosas que están en mi casa, nuevas, esperando un momento que no llegó. ' +
           'Cada una tiene <b>qué es</b>, <b>para qué la compré</b> y <b>por qué nunca la usé</b>.</p>' +
           '<div class="cover__chips anim d4">' +
@@ -70,7 +70,7 @@
           '</div>' +
           '<div class="info">' +
             '<div class="info__kicker anim d2"><span class="k">Producto ' + nn + ' / 10</span><span class="tag">' + p.tag + '</span></div>' +
-            '<h2 class="anim d2 shine">' + p.titulo + '</h2>' +
+            '<h2 class="anim d2"><span class="shine">' + p.titulo + '</span></h2>' +
             '<p class="info__sub anim d3">' + p.sub + '</p>' +
             '<div class="blocks">' +
               '<div class="blk anim d4" style="--bc:var(--c1)"><div class="blk__ico">' + svg(ICO.box) + '</div>' +
@@ -90,7 +90,7 @@
   slides.push(
     '<section class="slide">' +
       '<div class="end">' +
-        '<h2 class="anim d1 shine">Gracias</h2>' +
+        '<h2 class="anim d1"><span class="shine">Gracias</span></h2>' +
         '<p class="anim d2">Diez compras, diez razones distintas y un mismo final: el producto llegó, ' +
         'pero el momento de usarlo nunca llegó con él.</p>' +
         '<div class="credits anim d3">' +
